@@ -56,9 +56,11 @@ end
 
 module Associatable
   def belongs_to(name, options = {})
-    options = BelongsToOptions.new(name, options)
+    self.assoc_options[name] = BelongsToOptions.new(name, options)
 
     define_method(name) do
+      options = self.class.assoc_options[name]
+
       foreign_value = self.send(options.foreign_key)
       options
         .model_class
@@ -80,7 +82,7 @@ module Associatable
   end
 
   def assoc_options
-    
+    @@assoc_options ||= {}
   end
 end
 
