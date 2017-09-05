@@ -108,8 +108,6 @@ module Associatable
     end
   end
 
-  private
-
   def assoc_options
     @assoc_options ||= {}
     @assoc_options

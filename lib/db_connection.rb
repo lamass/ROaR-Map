@@ -4,7 +4,7 @@ PRINT_QUERIES = ENV['PRINT_QUERIES'] == 'true'
 # https://tomafro.net/2010/01/tip-relative-paths-with-file-expand-path
 ROOT_FOLDER = File.join(File.dirname(__FILE__), '..')
 SCHOOL_SQL_FILE = File.join(ROOT_FOLDER, 'school.sql')
-CATS_DB_FILE = File.join(ROOT_FOLDER, 'school.db')
+SCHOOL_DB_FILE = File.join(ROOT_FOLDER, 'school.db')
 
 class DBConnection
   def self.open(db_file_name)
@@ -18,7 +18,7 @@ class DBConnection
   def self.reset
     commands = [
       "rm '#{SCHOOL_DB_FILE}'",
-      "school '#{SCHOOL_SQL_FILE}' | sqlite3 '#{SCHOOL_DB_FILE}'"
+      "cat '#{SCHOOL_SQL_FILE}' | sqlite3 '#{SCHOOL_DB_FILE}'"
     ]
 
     commands.each { |command| `#{command}` }

@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS teachers;
-DROP TABLE IF EXISTS classes;
+DROP TABLE IF EXISTS courses;
 DROP TABLE IF EXISTS students;
 
 CREATE TABLE teachers (
@@ -9,7 +9,7 @@ CREATE TABLE teachers (
   salary INTEGER NOT NULL
 );
 
-CREATE TABLE classes (
+CREATE TABLE courses (
   id INTEGER PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   room_number INTEGER,
@@ -22,9 +22,9 @@ CREATE TABLE students (
   id INTEGER PRIMARY KEY,
   f_name VARCHAR(255) NOT NULL,
   l_name VARCHAR(255) NOT NULL,
-  class_id INTEGER NOT NULL,
+  course_id INTEGER NOT NULL,
 
-  FOREIGN KEY(class_id) REFERENCES class(id)
+  FOREIGN KEY(course_id) REFERENCES course(id)
 );
 
 
@@ -38,7 +38,7 @@ VALUES
   (4, "Pradeep", "Singh", 49000);
 
 INSERT INTO
-  classes (id, name, room_number, teacher_id)
+  courses (id, name, room_number, teacher_id)
 VALUES
   (1, "English 101", 234, 1),
   (2, "English 203", 331, 1),
@@ -49,7 +49,7 @@ VALUES
   (7, "Econometrics", 523, 4);
 
 INSERT INTO
-  students (id, f_name, l_name, class_id)
+  students (id, f_name, l_name, course_id)
 VALUES
   (1, "Araz", "Aslanian", 1),
   (2, "Afeef", "Sahabdeen", 4),
