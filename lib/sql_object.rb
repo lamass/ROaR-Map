@@ -1,8 +1,13 @@
 require_relative 'db_connection'
 require 'active_support/inflector'
+require_relative 'associatable'
+require_relative 'searchable'
 
 
 class SQLObject
+  extend Associatable
+  extend Searchable
+
   def self.columns
     @columns ||= DBConnection.execute2(<<-SQL)
     SELECT
