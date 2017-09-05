@@ -104,7 +104,6 @@ class SQLObject
     SQL
 
 
-
     # update id instance variable
     self.attributes[:id] = DBConnection.last_insert_row_id
   end
