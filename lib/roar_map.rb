@@ -4,7 +4,7 @@ require_relative 'associatable'
 require_relative 'searchable'
 
 
-class SQLObject
+class RoarMap
   extend Associatable
   extend Searchable
 

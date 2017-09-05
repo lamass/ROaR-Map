@@ -1,19 +1,19 @@
 require_relative './lib/sql_object'
 
-class Teacher < SQLObject
+class Teacher < RoarMap
   has_many :courses
 
   finalize!
 end
 
-class Course < SQLObject
+class Course < RoarMap
   belongs_to :teacher
   has_many :students
 
   finalize!
 end
 
-class Student < SQLObject
+class Student < RoarMap
   belongs_to :course
   has_one_through :teacher, :course, :teacher
 
