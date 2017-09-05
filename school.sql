@@ -1,8 +1,12 @@
+DROP TABLE IF EXISTS teachers;
+DROP TABLE IF EXISTS classes;
+DROP TABLE IF EXISTS students;
+
 CREATE TABLE teachers (
   id INTEGER PRIMARY KEY,
   f_name VARCHAR(255) NOT NULL,
   l_name VARCHAR(255) NOT NULL,
-  salary INTEGER NOT NULL,
+  salary INTEGER NOT NULL
 );
 
 CREATE TABLE classes (
@@ -31,7 +35,7 @@ VALUES
   (1, "Arthur", "Rutherford", 46000),
   (2, "Bo", "Lei", 45000),
   (3, "Ilya", "Spitkovsky", 47500),
-  (4, "Pradeep", "Singh", 49000),
+  (4, "Pradeep", "Singh", 49000);
 
 INSERT INTO
   classes (id, name, room_number, teacher_id)
@@ -42,7 +46,7 @@ VALUES
   (4, "Computer Engineering 101", 444, 2),
   (5, "Real Analysis", 137, 3),
   (6, "Financial Systems", 512, 4),
-  (7, "Econometrics", 523, 4),
+  (7, "Econometrics", 523, 4);
 
 INSERT INTO
   students (id, f_name, l_name, class_id)
@@ -54,4 +58,4 @@ VALUES
   (5, "Hye", "Seung", 5),
   (6, "Maulik", "Patel", 6),
   (7, "Paul", "Alzate", 3),
-  (8, "Thomas", "Seubert", 2),
+  (8, "Thomas", "Seubert", 2);
