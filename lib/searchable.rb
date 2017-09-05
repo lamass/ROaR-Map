@@ -1,5 +1,5 @@
 require_relative 'db_connection'
-require_relative 'sql_object'
+require_relative 'roar_map'
 
 module Searchable
   def where(params)
