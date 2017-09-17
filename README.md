@@ -9,15 +9,18 @@ Ruby Object Relational Map, or ROaR-Map for short, is a Ruby wrapper for SQL. Th
 - `where` takes a hash of parameters to filter db query
 
 ## Methods
-- `ROaR-Map::columns`
-- `ROaR-Map::table_name=` & `ROaR-Map::table_name`
-- `ROaR-Map::all`
-- `ROaR-Map::insert`
-- `ROaR-Map::update`
-- `ROaR-Map::save`
-- `ROaR-Map::belongs_to`
-- `ROaR-Map::has_many`
-- `ROaR-Map::has_one_through`
+- `::columns` returns symbol array of table columns
+- `::table_name=(string)` sets table name to value of provided string argument
+- `::table_name` returns table_name as string
+- `::all` returns an array of class instances
+- `#insert` inserts new row into table with class instance's attribute values as values.
+- `#attributes` returns hash where keys are the table's column names and values are their respective values
+- `#attribute_values` returns unsorted array of column values
+- `#update` after changing object's attribute values by manipulating hash returned by `#attributes`, update corresponding row in table
+- `#save` either inserts or updates row in table depending on presence in database
+- `#belongs_to(name, {class_name: string, primary_key: integer, foreign_key: integer})` 
+- `#has_many(name, {class_name: string, primary_key: integer, foreign_key: integer})`
+- `#has_one_through(name, through_name, source_name)`
 
 
 ## Setup
