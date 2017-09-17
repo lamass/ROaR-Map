@@ -43,6 +43,7 @@ end
 ## Demo 
 To check out the above example in action
 1. cd into the root directory
+2. run the following command: `cat school.sql | sqlite3 school.db`
 2. Start a REPL session
 3. Load `demo.rb`
 4. Run commands like `Teacher.all` or try creating a new student object!
