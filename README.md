@@ -18,9 +18,18 @@ Ruby Object Relational Map, or ROaR-Map for short, is a Ruby wrapper for SQL. Th
 - `#attribute_values` returns unsorted array of column values
 - `#update` after changing object's attribute values by manipulating hash returned by `#attributes`, update corresponding row in table
 - `#save` either inserts or updates row in table depending on presence in database
-- `#belongs_to(name, {class_name: string, primary_key: integer, foreign_key: integer})` 
-- `#has_many(name, {class_name: string, primary_key: integer, foreign_key: integer})`
-- `#has_one_through(name, through_name, source_name)`
+
+### `belongs_to`
+Arguments: `(name, {class_name: string, primary_key: integer, foreign_key: integer})` 
+Takes as arguments a required class name and an optional hash. The method creates a class instance method that fetches the appropiate table relation as an object. Use this method when the given object's table has a foreign key that points to another table's primary key. See the example in the example section below for an example of usage.
+
+### `has_many`
+Arguments: `(name, {class_name: string, primary_key: integer, foreign_key: integer})`
+Like `belongs_to`, takes as arguments a required class name and an optional hash and creates a class instance method that fetches the appropiate table relation as an object. Use this method when the given object's table has a primary key that other tables' foreign keys point to. See the example in the example section below for an example of usage.
+
+### `has_one_through`
+Arguments: `(name, through_name, source_name)`
+Takes in three required arguments and creates an instance method that fetches the appropriate distant table relation. Use this method when the given object's table has a foreign key that points to the primary key of the `through_name`'s table, which in turn has a foreign key that points to the primary key of the `source_name`'s table. 
 
 
 ## Setup
