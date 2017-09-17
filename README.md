@@ -8,6 +8,18 @@ Ruby Object Relational Map, or ROaR-Map for short, is a Ruby wrapper for SQL. Th
 - Select specific row from a table with `find` method given the row id as an argument
 - `where` takes a hash of parameters to filter db query
 
+## Methods
+- `ROaR-Map::columns`
+- `ROaR-Map::table_name=` & `ROaR-Map::table_name`
+- `ROaR-Map::all`
+- `ROaR-Map::insert`
+- `ROaR-Map::update`
+- `ROaR-Map::save`
+- `ROaR-Map::belongs_to`
+- `ROaR-Map::has_many`
+- `ROaR-Map::has_one_through`
+
+
 ## Setup
 1. Make a database using SQL
 2. Make a ruby file that contains class wrappers with the following format:
